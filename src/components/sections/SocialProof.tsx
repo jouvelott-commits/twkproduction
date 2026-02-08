@@ -77,7 +77,7 @@ const SocialProof = () => {
             Ils nous ont fait <span className="text-gradient">confiance</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Des entrepreneurs et créateurs qui ont transformé leur présence YouTube
+            Des entrepreneurs et créateurs qui ont transformé leur présence en ligne
           </p>
         </motion.div>
 

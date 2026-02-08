@@ -32,9 +32,9 @@ const CTA = () => {
           </div>
           
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Prêt à transformer votre
+            Prêt à créer du
             <br />
-            <span className="text-gradient">chaîne YouTube ?</span>
+            <span className="text-gradient">contenu qui performe ?</span>
           </h2>
           
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">

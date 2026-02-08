@@ -13,32 +13,32 @@ const services = [
   {
     icon: Lightbulb,
     title: "Stratégie de contenu",
-    description: "On définit ensemble votre positionnement et votre ligne éditoriale",
+    description: "On définit ensemble votre positionnement et votre ligne éditoriale sur tous vos canaux",
   },
   {
     icon: Search,
-    title: "Recherche d'idées",
-    description: "Des sujets validés par la data pour maximiser vos vues",
+    title: "Recherche de sujets",
+    description: "Des idées validées par la data pour maximiser votre impact",
   },
   {
     icon: FileText,
-    title: "Scripts percutants",
+    title: "Scripts & storytelling",
     description: "Des scripts structurés qui captent l'attention de A à Z",
   },
   {
     icon: Film,
     title: "Montage professionnel",
-    description: "Un montage dynamique qui reflète votre personnalité",
+    description: "Vidéos longues, shorts, reels, podcasts — on gère tous les formats",
   },
   {
     icon: Image,
-    title: "Miniatures impactantes",
+    title: "Visuels & miniatures",
     description: "Des visuels qui génèrent des clics et se démarquent",
   },
   {
     icon: Rocket,
-    title: "SEO YouTube",
-    description: "Optimisation pour que l'algorithme vous pousse en avant",
+    title: "Optimisation & SEO",
+    description: "Optimisation pour que les algorithmes vous mettent en avant",
   },
 ];
 
@@ -58,7 +58,7 @@ const Solution = () => {
             La solution
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Un accompagnement <span className="text-gradient">A-Z</span> pour votre chaîne
+            Un accompagnement <span className="text-gradient">A-Z</span> pour vos contenus
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             On gère tout le processus de création pour que vous puissiez vous concentrer sur ce que vous faites de mieux : votre expertise.
