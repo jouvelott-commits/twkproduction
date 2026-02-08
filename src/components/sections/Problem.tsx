@@ -5,22 +5,22 @@ const problems = [
   {
     icon: Clock,
     title: "Pas le temps",
-    description: "Vous êtes débordé par votre business et YouTube passe toujours après",
+    description: "Vous êtes débordé et la création de contenu passe toujours au second plan",
   },
   {
     icon: Brain,
-    title: "Manque d'idées",
-    description: "Vous ne savez pas quoi publier ni comment structurer vos vidéos",
+    title: "Manque d'expertise",
+    description: "Vous ne savez pas par où commencer ni comment produire du contenu qui performe",
   },
   {
     icon: Frown,
-    title: "Montage frustrant",
-    description: "Des heures passées sur le montage pour un résultat amateur",
+    title: "Résultat amateur",
+    description: "Des heures passées sur le montage pour un rendu qui ne vous satisfait pas",
   },
   {
     icon: TrendingDown,
-    title: "Peu de vues",
-    description: "Vos vidéos ne décollent pas malgré vos efforts",
+    title: "Pas de résultats",
+    description: "Vos contenus ne génèrent ni vues, ni engagement, ni clients",
   },
 ];
 
@@ -42,10 +42,10 @@ const Problem = () => {
             Le constat
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Vous voulez créer sur YouTube mais...
+            Vous voulez créer du contenu mais...
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ces obstacles vous empêchent de développer votre chaîne et d'atteindre vos objectifs
+            Ces obstacles vous empêchent de développer votre présence en ligne
           </p>
         </motion.div>
 
@@ -77,7 +77,7 @@ const Problem = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center text-xl font-medium mt-12"
         >
-          Résultat : votre chaîne YouTube stagne et vous perdez des opportunités chaque jour.
+          Résultat : votre contenu stagne et vous perdez des opportunités chaque jour.
         </motion.p>
       </div>
     </section>

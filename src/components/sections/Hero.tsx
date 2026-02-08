@@ -20,7 +20,7 @@ const Hero = () => {
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground mb-8">
               TWKPRODUCTION
               <Play className="w-4 h-4 text-primary" fill="currentColor" />
-              Agence de production YouTube
+              Agence de création vidéo
             </span>
           </motion.div>
 
@@ -30,8 +30,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6"
           >
-            Des <span className="text-gradient">VIDÉOS YouTube</span>
-            <br />pour scale votre business
+            On crée vos
+            <br /><span className="text-gradient">contenus vidéo.</span>
           </motion.h1>
 
           <motion.p
@@ -40,7 +40,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto"
           >
-            On vous accompagne dans un nouveau système d'acquisition YouTube, conçu pour attirer les bon clients
+            Tout inclus, prix fixes & retours illimités.
           </motion.p>
 
           <motion.div

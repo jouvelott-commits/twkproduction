@@ -11,27 +11,27 @@ const benefits = [
   {
     icon: Clock,
     title: "Gagnez 20h+ par mois",
-    description: "Plus de temps perdu sur le montage et la recherche. Concentrez-vous sur votre business.",
+    description: "Plus de temps perdu sur le montage et la recherche. Concentrez-vous sur votre activité.",
   },
   {
     icon: TrendingUp,
     title: "Croissance accélérée",
-    description: "Des vidéos optimisées pour l'algorithme qui génèrent plus de vues et d'abonnés.",
+    description: "Des contenus optimisés qui génèrent plus de vues, d'engagement et de clients.",
   },
   {
     icon: Shield,
     title: "Qualité constante",
-    description: "Un rendu professionnel à chaque vidéo, sans variation de qualité.",
+    description: "Un rendu professionnel à chaque contenu, sans variation de qualité.",
   },
   {
     icon: Zap,
     title: "Publication régulière",
-    description: "Maintenez un rythme de publication sans sacrifier votre énergie.",
+    description: "Maintenez un rythme de publication soutenu sans sacrifier votre énergie.",
   },
   {
     icon: Target,
-    title: "Plus de clients",
-    description: "YouTube devient votre machine à leads qui tourne 24/7.",
+    title: "Plus de visibilité",
+    description: "Vos contenus deviennent votre meilleur canal d'acquisition, 24/7.",
   },
 ];
 
@@ -52,7 +52,7 @@ const Benefits = () => {
             Ce que vous allez <span className="text-gradient">gagner</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Les bénéfices concrets de notre accompagnement pour votre business
+            Les bénéfices concrets de notre accompagnement pour votre création de contenu
           </p>
         </motion.div>
 
