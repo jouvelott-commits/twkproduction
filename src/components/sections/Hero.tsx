@@ -40,7 +40,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto"
           >
-            Tout inclus, prix fixes & retours illimités.
+            Vous filmez, on s'occupe du reste. Montage, formats courts, podcasts — clé en main.
           </motion.p>
 
           <motion.div
