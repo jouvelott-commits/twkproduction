@@ -1,42 +1,38 @@
 import { motion } from "framer-motion";
 import { Clock, Brain, Frown, TrendingDown, AlertTriangle } from "lucide-react";
-
-const problems = [
-  {
-    icon: Clock,
-    title: "Pas le temps",
-    description: "Vous êtes débordé et la création de contenu passe toujours au second plan",
-  },
-  {
-    icon: Brain,
-    title: "Manque d'expertise",
-    description: "Vous ne savez pas par où commencer ni comment produire du contenu qui performe",
-  },
-  {
-    icon: Frown,
-    title: "Résultat amateur",
-    description: "Des heures passées sur le montage pour un rendu qui ne vous satisfait pas",
-  },
-  {
-    icon: TrendingDown,
-    title: "Pas de résultats",
-    description: "Vos contenus ne génèrent ni vues, ni engagement, ni clients",
-  },
-];
-
+const problems = [{
+  icon: Clock,
+  title: "Pas le temps",
+  description: "Vous êtes débordé et la création de contenu passe toujours au second plan"
+}, {
+  icon: Brain,
+  title: "Manque d'expertise",
+  description: "Vous ne savez pas par où commencer ni comment produire du contenu qui performe"
+}, {
+  icon: Frown,
+  title: "Résultat amateur",
+  description: "Des heures passées sur le montage pour un rendu qui ne vous satisfait pas"
+}, {
+  icon: TrendingDown,
+  title: "Pas de résultats",
+  description: "Vos contenus ne génèrent ni vues, ni engagement, ni clients"
+}];
 const Problem = () => {
-  return (
-    <section className="py-24 relative">
+  return <section className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6
+      }} className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/10 text-destructive text-sm mb-6">
             <AlertTriangle className="w-4 h-4" />
             Le constat
@@ -50,15 +46,18 @@ const Problem = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {problems.map((problem, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass rounded-2xl p-6 flex gap-4 items-start hover:border-destructive/30 transition-colors"
-            >
+          {problems.map((problem, index) => <motion.div key={index} initial={{
+          opacity: 0,
+          x: index % 2 === 0 ? -20 : 20
+        }} whileInView={{
+          opacity: 1,
+          x: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6,
+          delay: index * 0.1
+        }} className="glass rounded-2xl p-6 flex gap-4 items-start hover:border-destructive/30 transition-colors">
               <div className="p-3 rounded-xl bg-destructive/10 shrink-0">
                 <problem.icon className="w-6 h-6 text-destructive" />
               </div>
@@ -66,22 +65,24 @@ const Problem = () => {
                 <h3 className="font-semibold text-lg mb-2">{problem.title}</h3>
                 <p className="text-muted-foreground">{problem.description}</p>
               </div>
-            </motion.div>
-          ))}
+            </motion.div>)}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center text-xl font-medium mt-12"
-        >
+        <motion.p initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6,
+        delay: 0.5
+      }} className="text-center text-xl font-medium mt-12">
           Résultat : votre contenu stagne et vous perdez des opportunités chaque jour.
         </motion.p>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Problem;
