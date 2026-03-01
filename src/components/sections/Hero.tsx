@@ -36,8 +36,8 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-            On crée vos
-            <br /><span className="text-gradient">contenus vidéo.</span>
+            Votre image mérite
+            <br /><span className="text-gradient">plus qu'un simple montage.</span>
           </motion.h1>
 
           <motion.p initial={{
