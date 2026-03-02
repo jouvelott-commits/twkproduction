@@ -483,15 +483,22 @@ const Portfolio = () => {
             }`}
           >
             {filteredVideos.map((video, index) => (
+              {video.category === "miniature" ? (
+              <div
+                key={index}
+                className="glass rounded-2xl overflow-hidden group"
+              >
+              ) : (
               <motion.div
                 key={index}
-                initial={video.category === "miniature" ? false : { opacity: 0, y: 20 }}
-                whileInView={video.category === "miniature" ? undefined : { opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={video.category === "miniature" ? undefined : { duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 layout
                 className="glass rounded-2xl overflow-hidden group"
               >
+              )}
                 {video.category === "miniature" && video.image ? (
                   <img
                     src={video.image}
