@@ -3,8 +3,12 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import miniature1 from "@/assets/miniature-1.png";
+import miniature2 from "@/assets/miniature-2.png";
+import miniature3 from "@/assets/miniature-3.png";
+import miniature4 from "@/assets/miniature-4.png";
 
-type VideoCategory = "horizontale" | "verticale" | "podcast" | "entrepreneuriat";
+type VideoCategory = "horizontale" | "verticale" | "podcast" | "entrepreneuriat" | "miniature";
 
 // Remplace ces IDs par les vrais IDs de tes vidéos YouTube
 const videos = [
@@ -266,6 +270,40 @@ const videos = [
     category: "entrepreneuriat" as VideoCategory,
   },
 
+  // MINIATURE - 4 images
+  {
+    id: "miniature-1",
+    title: "Miniature 1",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature1,
+  },
+  {
+    id: "miniature-2",
+    title: "Miniature 2",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature2,
+  },
+  {
+    id: "miniature-3",
+    title: "Miniature 3",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature3,
+  },
+  {
+    id: "miniature-4",
+    title: "Miniature 4",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature4,
+  },
+
   // VERTICALE - 12 vidéos (4 rangées)
   {
     id: "pjFUHOsp1Zg",
@@ -358,6 +396,7 @@ const categories = [
   { id: "verticale" as VideoCategory, label: "Verticale" },
   { id: "podcast" as VideoCategory, label: "Podcast" },
   { id: "entrepreneuriat" as VideoCategory, label: "Entrepreneuriat" },
+  { id: "miniature" as VideoCategory, label: "Miniature" },
 ];
 
 const Portfolio = () => {
@@ -428,9 +467,9 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-black text-center mb-12"
           >
-            VIDÉOS{" "}
+          {activeCategory === "miniature" ? "" : "VIDÉOS "}
             <span className="text-gradient">
-              {activeCategory.toUpperCase() + "S"}
+              {activeCategory === "miniature" ? "MINIATURES" : activeCategory.toUpperCase() + "S"}
             </span>
           </motion.h2>
 
@@ -438,6 +477,8 @@ const Portfolio = () => {
             className={`grid gap-6 ${
               activeCategory === "verticale"
                 ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+                : activeCategory === "miniature"
+                ? "grid-cols-2 md:grid-cols-4"
                 : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             }`}
           >
@@ -451,16 +492,23 @@ const Portfolio = () => {
                 layout
                 className="glass rounded-2xl overflow-hidden group"
               >
-                {/* YouTube Embed */}
-                <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
+                {video.category === "miniature" && video.image ? (
+                  <img
+                    src={video.image}
+                    alt={video.title}
+                    className="w-full h-full object-cover"
                   />
-                </div>
+                ) : (
+                  <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
