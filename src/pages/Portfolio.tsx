@@ -482,30 +482,30 @@ const Portfolio = () => {
                 : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             }`}
           >
-            {filteredVideos.map((video, index) => (
-              {video.category === "miniature" ? (
-              <div
-                key={index}
-                className="glass rounded-2xl overflow-hidden group"
-              >
+            {filteredVideos.map((video, index) =>
+              video.category === "miniature" ? (
+                <div
+                  key={index}
+                  className="glass rounded-2xl overflow-hidden group"
+                >
+                  {video.image && (
+                    <img
+                      src={video.image}
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
               ) : (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                layout
-                className="glass rounded-2xl overflow-hidden group"
-              >
-              )}
-                {video.category === "miniature" && video.image ? (
-                  <img
-                    src={video.image}
-                    alt={video.title}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  layout
+                  className="glass rounded-2xl overflow-hidden group"
+                >
                   <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
                     <iframe
                       src={`https://www.youtube.com/embed/${video.id}`}
@@ -515,9 +515,9 @@ const Portfolio = () => {
                       className="w-full h-full"
                     />
                   </div>
-                )}
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            )}
           </div>
 
           {/* Empty state */}
