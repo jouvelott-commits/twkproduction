@@ -485,10 +485,10 @@ const Portfolio = () => {
             {filteredVideos.map((video, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={video.category === "miniature" ? false : { opacity: 0, y: 20 }}
+                whileInView={video.category === "miniature" ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={video.category === "miniature" ? undefined : { duration: 0.6, delay: index * 0.1 }}
                 layout
                 className="glass rounded-2xl overflow-hidden group"
               >
