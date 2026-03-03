@@ -1,19 +1,14 @@
 
-# Ajouter la categorie "Miniature" au portfolio
 
-## Ce qui va changer
+# Fix Portfolio CTA link to scroll to contact section on home page
 
-1. **Copier les 4 images** dans `src/assets/` (miniature-1.png a miniature-4.png)
+## Problem
+The Portfolio "Réserver un appel découverte" button uses `<Link to="/#contact">` but react-router doesn't handle hash scrolling when navigating between pages.
 
-2. **Modifier `src/pages/Portfolio.tsx`** :
-   - Ajouter `"miniature"` au type `VideoCategory`
-   - Ajouter les 4 miniatures dans le tableau `videos` avec `category: "miniature"`
-   - Ajouter `{ id: "miniature", label: "Miniature" }` dans le tableau `categories`
-   - Adapter la grille : pour la categorie "miniature", afficher une grille de 4 colonnes (`grid-cols-2 md:grid-cols-4`) avec les images directement (pas d'iframe YouTube), en utilisant des balises `<img>` au lieu des iframes
+## Solution
+Replace the `Link` with an `onClick` handler that navigates to `/` then scrolls to `#contact` after a short delay (same pattern used in `Navbar.tsx`).
 
-## Details techniques
+**In `src/pages/Portfolio.tsx`** (lines 549-551):
+- Import `useNavigate` from react-router-dom
+- Replace the `<Link to="/#contact">` with a `<button>` or use `onClick` with `navigate("/")` followed by `setTimeout` to scroll to `#contact`
 
-- Les miniatures seront importees en tant qu'assets ES6 depuis `src/assets/`
-- La structure de donnees des videos miniatures utilisera un champ `image` au lieu de `id` pour stocker le chemin de l'image
-- Le rendu conditionnel dans la grille affichera soit un iframe YouTube, soit une image selon la categorie
-- Le titre de section affichera "MINIATURES" quand cette categorie est active
