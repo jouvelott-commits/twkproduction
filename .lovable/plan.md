@@ -1,19 +1,29 @@
 
-# Ajouter la categorie "Miniature" au portfolio
 
-## Ce qui va changer
+# Modifications demandees
 
-1. **Copier les 4 images** dans `src/assets/` (miniature-1.png a miniature-4.png)
+## 1. SocialProof : Remplacer des createurs et corriger le defilement
 
-2. **Modifier `src/pages/Portfolio.tsx`** :
-   - Ajouter `"miniature"` au type `VideoCategory`
-   - Ajouter les 4 miniatures dans le tableau `videos` avec `category: "miniature"`
-   - Ajouter `{ id: "miniature", label: "Miniature" }` dans le tableau `categories`
-   - Adapter la grille : pour la categorie "miniature", afficher une grille de 4 colonnes (`grid-cols-2 md:grid-cols-4`) avec les images directement (pas d'iframe YouTube), en utilisant des balises `<img>` au lieu des iframes
+**Dans `src/components/sections/SocialProof.tsx`** :
+
+- **Supprimer** "Impact Trading" (ligne 11) et "Kasper Trading" (ligne 14) du tableau `creators`
+- **Ajouter** "Max Bellona" avec la photo uploadee (image-9.png copiee dans `src/assets/max-bellona.png`), 480K abonnes, 5M vues
+- **Placer Micode a cote de MS** dans l'ordre du tableau (juste avant ou apres MS)
+- **Corriger le defilement** : remplacer le scroll qui se reset par un defilement CSS infini continu. Technique : dupliquer la liste des createurs dans le DOM et utiliser une animation CSS `@keyframes` avec `translateX` pour un defilement sans interruption (marquee infini). Supprimer le `useEffect` avec `scrollLeft` et `requestAnimationFrame`.
+
+## 2. Portfolio : Remplacer des videos
+
+**Dans `src/pages/Portfolio.tsx`** :
+
+- **Entrepreneuriat** : Remplacer `k5EHtBpIhq4` (4eme video) par `tuuAb1A8CkY`
+- **Verticale** : Remplacer `mOvu0uOxu8U` par `pZy98t8qhiE`, et `ooCtIyO8RU0` par `PyZZc9x7xtc`
+
+## 3. Portfolio : Bouton CTA redirection
+
+- Le bouton "Reserver un appel decouverte" dans le CTA du portfolio redirige deja vers `/#contact`. Verifier que ca fonctionne correctement avec react-router (utiliser `Link` ou `navigate` au lieu de `<a href>`).
 
 ## Details techniques
 
-- Les miniatures seront importees en tant qu'assets ES6 depuis `src/assets/`
-- La structure de donnees des videos miniatures utilisera un champ `image` au lieu de `id` pour stocker le chemin de l'image
-- Le rendu conditionnel dans la grille affichera soit un iframe YouTube, soit une image selon la categorie
-- Le titre de section affichera "MINIATURES" quand cette categorie est active
+- L'animation de defilement infini utilisera une approche CSS pure avec deux copies de la liste cote a cote et `animation: scroll Xs linear infinite` sur le conteneur flex
+- La photo de Max Bellona sera importee depuis `src/assets/max-bellona.png`
+
