@@ -207,7 +207,7 @@ const videos = [
     category: "entrepreneuriat" as VideoCategory,
   },
   {
-    id: "k5EHtBpIhq4",
+    id: "tuuAb1A8CkY",
     title: "Entrepreneuriat 4",
     client: "Client 4",
     views: "720K vues",
@@ -334,14 +334,14 @@ const videos = [
     category: "verticale" as VideoCategory,
   },
   {
-    id: "mOvu0uOxu8U",
+    id: "pZy98t8qhiE",
     title: "Vidéo Verticale 5",
     client: "Client 5",
     views: "3.2M vues",
     category: "verticale" as VideoCategory,
   },
   {
-    id: "ooCtIyO8RU0",
+    id: "PyZZc9x7xtc",
     title: "Vidéo Verticale 6",
     client: "Client 6",
     views: "1.1M vues",
@@ -547,7 +547,7 @@ const Portfolio = () => {
               Rejoignez nos clients satisfaits et boostez votre présence YouTube.
             </p>
             <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 shadow-glow" asChild>
-              <a href="/#contact">Réserver un appel découverte</a>
+              <Link to="/#contact">Réserver un appel découverte</Link>
             </Button>
           </motion.div>
         </div>
