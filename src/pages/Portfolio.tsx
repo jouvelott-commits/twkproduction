@@ -313,8 +313,7 @@ const videos = [
     category: "verticale" as VideoCategory,
   },
   {
-    id: "Jv7jjzJxaIw",
-    title: "Vidéo Verticale 2",
+    id: "m_Ez_xPzsLM",
     client: "Client 2",
     views: "1.5M vues",
     category: "verticale" as VideoCategory,
@@ -362,8 +361,7 @@ const videos = [
     category: "verticale" as VideoCategory,
   },
   {
-    id: "GK3mJfrFW4w",
-    title: "Vidéo Verticale 9",
+    id: "Jv7jjzJxaIw",
     client: "Client 9",
     views: "1.9M vues",
     category: "verticale" as VideoCategory,
@@ -383,8 +381,7 @@ const videos = [
     category: "verticale" as VideoCategory,
   },
   {
-    id: "VifMoodQ1nI",
-    title: "Vidéo Verticale 12",
+    id: "4kpGJTHMEJM",
     client: "Client 12",
     views: "3.5M vues",
     category: "verticale" as VideoCategory,
