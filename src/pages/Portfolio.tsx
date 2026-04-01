@@ -381,8 +381,7 @@ const videos = [
     category: "verticale" as VideoCategory,
   },
   {
-    id: "VifMoodQ1nI",
-    title: "Vidéo Verticale 12",
+    id: "4kpGJTHMEJM",
     client: "Client 12",
     views: "3.5M vues",
     category: "verticale" as VideoCategory,
