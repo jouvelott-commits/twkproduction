@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mic, Play, Zap, Image, Plus } from "lucide-react";
+import { Mic, Play, Zap, Image, Video } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -33,19 +33,19 @@ const Pricing = () => {
         </motion.div>
 
         {/* PODCAST */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-              <Mic className="w-5 h-5 text-primary" />
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="mb-10">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center">
+              <Mic className="w-4 h-4 text-primary" />
             </div>
             <div>
-              <h3 className="text-lg font-bold">Podcast vidéo</h3>
+              <h3 className="text-base font-bold">Podcast vidéo</h3>
               <p className="text-xs text-muted-foreground">Multi-caméras, face cam, interviews, B-roll</p>
             </div>
           </div>
-          <div className="max-w-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
             <PricingCard
-              badge="Tarif unique"
+              badge="Épisode seul"
               badgeColor="primary"
               subtitle="Peu importe la durée"
               price="500€"
@@ -60,23 +60,39 @@ const Pricing = () => {
                 { text: "Miniature non incluse", included: false },
               ]}
             />
+            <PricingCard
+              badge="Pack Podcast"
+              badgeColor="purple"
+              subtitle="Épisode + extras"
+              price="750€"
+              per="/ pack"
+              featured
+              features={[
+                { text: "Montage podcast complet", included: true },
+                { text: "1 miniature YouTube", included: true },
+                { text: "3 shorts tirés du podcast", included: true },
+                { text: "Sous-titres", included: true },
+                { text: "Color grading", included: true },
+                { text: "Jusqu'à la V3", included: true },
+              ]}
+            />
           </div>
         </motion.div>
 
-        <div className="border-t border-border/50 my-10" />
+        <div className="border-t border-border/50 my-8" />
 
         {/* YOUTUBE */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-              <Play className="w-5 h-5 text-primary" fill="currentColor" />
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="mb-10">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center">
+              <Play className="w-4 h-4 text-primary" fill="currentColor" />
             </div>
             <div>
-              <h3 className="text-lg font-bold">YouTube — Vlog / Éducatif / Storytelling</h3>
+              <h3 className="text-base font-bold">YouTube — Vlog / Éducatif / Storytelling</h3>
               <p className="text-xs text-muted-foreground">Talking head, motion design, narration, B-roll</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <PricingCard
               badge="Essentiel"
               badgeColor="green"
@@ -126,73 +142,68 @@ const Pricing = () => {
               ]}
             />
           </div>
-          <div className="mt-4 rounded-xl bg-amber-500/10 border border-amber-500/20 px-5 py-3">
-            <p className="text-sm text-amber-300">
+          <div className="mt-3 rounded-xl bg-amber-500/10 border border-amber-500/20 px-4 py-2.5">
+            <p className="text-xs text-amber-300">
               ⚡ <span className="font-semibold">Avec motion design</span> (animations, effets visuels, graphiques dynamiques) — tarif multiplié par 2 sur n'importe quelle formule YouTube.
             </p>
           </div>
         </motion.div>
 
-        <div className="border-t border-border/50 my-10" />
+        <div className="border-t border-border/50 my-8" />
 
         {/* SHORT FORM */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-              <Zap className="w-5 h-5 text-primary" />
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="mb-10">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center">
+              <Zap className="w-4 h-4 text-primary" />
             </div>
             <div>
-              <h3 className="text-lg font-bold">Short form — Reels / TikTok / Shorts</h3>
+              <h3 className="text-base font-bold">Short form — Reels / TikTok / Shorts</h3>
               <p className="text-xs text-muted-foreground">Clips dédiés ou tirés d'une longue vidéo</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             <MiniCard badge="Simple" badgeColor="green" name="1 short simple" desc="Montage cut, rythme, sous-titres" price="80€" per="/ short" note="Jusqu'à la V3" />
             <MiniCard badge="Avancé" badgeColor="primary" name="1 short avancé" desc="Motion design, effets, sous-titres" price="150€" per="/ short" note="Jusqu'à la V3" featured />
-            <MiniCard badge="Pack Simple x8" badgeColor="teal" name="8 shorts simples" desc="Idéal pour 2 shorts / semaine" price="560€" per="/ mois" note="Économie de 80€ vs à l'unité" />
-            <MiniCard badge="Pack Avancé x8" badgeColor="purple" name="8 shorts avancés" desc="Motion design sur chaque short" price="1 000€" per="/ mois" note="Économie de 200€ vs à l'unité" />
+            <MiniCard badge="Pack Simple x8" badgeColor="teal" name="8 shorts simples" desc="Idéal pour 2 shorts / semaine" price="560€" per="/ mois" note="Économie de 80€" />
+            <MiniCard badge="Pack Avancé x8" badgeColor="purple" name="8 shorts avancés" desc="Motion design sur chaque short" price="1 000€" per="/ mois" note="Économie de 200€" />
           </div>
-          <p className="text-xs text-muted-foreground mt-4 italic">
+          <p className="text-xs text-muted-foreground mt-3 italic">
             Short tiré d'une vidéo longue déjà montée : -20€ par short (rushs déjà sélectionnés)
           </p>
         </motion.div>
 
-        <div className="border-t border-border/50 my-10" />
+        <div className="border-t border-border/50 my-8" />
 
-        {/* MINIATURE */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4} className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-              <Image className="w-5 h-5 text-primary" />
-            </div>
+        {/* MINIATURE + VSL */}
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Miniature */}
             <div>
-              <h3 className="text-lg font-bold">Miniature YouTube</h3>
-              <p className="text-xs text-muted-foreground">Option séparée à ajouter à n'importe quel forfait</p>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <Image className="w-4 h-4 text-primary" />
+                </div>
+                <h3 className="text-base font-bold">Miniature YouTube</h3>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <MiniCard badge="Standard" badgeColor="purple" name="1 miniature" desc="Design optimisé CTR" price="60€" per="/ miniature" />
+                <MiniCard badge="Pack x4" badgeColor="purple" name="4 miniatures" desc="Pour 1 mois de contenu" price="200€" per="/ mois" note="Économie de 40€" />
+              </div>
             </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg">
-            <MiniCard badge="Standard" badgeColor="purple" name="1 miniature" desc="Design optimisé CTR, format YouTube" price="60€" per="/ miniature" />
-            <MiniCard badge="Pack x4" badgeColor="purple" name="4 miniatures" desc="Pour 1 mois de contenu" price="200€" per="/ mois" note="Économie de 40€" />
-          </div>
-        </motion.div>
 
-        <div className="border-t border-border/50 my-10" />
-
-        {/* SUPPLÉMENTS */}
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={5}>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-              <Plus className="w-5 h-5 text-primary" />
-            </div>
+            {/* VSL */}
             <div>
-              <h3 className="text-lg font-bold">Suppléments</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-9 h-9 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <Video className="w-4 h-4 text-primary" />
+                </div>
+                <h3 className="text-base font-bold">VSL (Video Sales Letter)</h3>
+              </div>
+              <div className="max-w-xs">
+                <MiniCard badge="Sur devis" badgeColor="primary" name="VSL complète" desc="Script, montage, motion design, voix off" price="Devis" per="/ projet" note="Contactez-nous" />
+              </div>
             </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <ExtraItem name="Version supplémentaire (après V3)" price="+80€" />
-            <ExtraItem name="Rush excédentaire (hors volume inclus)" price="+100€ / heure" />
-            <ExtraItem name="Livraison express 24h" price="Tarif x2" />
-            <ExtraItem name="Corporate / institutionnel" price="Sur devis" />
           </div>
         </motion.div>
       </div>
@@ -213,18 +224,18 @@ function PricingCard({
     teal: "bg-teal-500/20 text-teal-400",
   };
   return (
-    <div className={`rounded-2xl p-6 glass ${featured ? "border-primary/60 ring-1 ring-primary/30" : ""}`}>
-      <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-4 ${badgeStyles[badgeColor] || badgeStyles.primary}`}>
+    <div className={`rounded-xl p-4 glass ${featured ? "border-primary/60 ring-1 ring-primary/30" : ""}`}>
+      <span className={`inline-block text-[10px] font-semibold px-2.5 py-0.5 rounded-md mb-3 ${badgeStyles[badgeColor] || badgeStyles.primary}`}>
         {badge}
       </span>
-      <p className="text-xs text-muted-foreground mb-1">{subtitle}</p>
-      <p className="text-3xl font-bold mb-5">
-        {price} <span className="text-sm font-normal text-muted-foreground">{per}</span>
+      <p className="text-[11px] text-muted-foreground mb-0.5">{subtitle}</p>
+      <p className="text-2xl font-bold mb-3">
+        {price} <span className="text-xs font-normal text-muted-foreground">{per}</span>
       </p>
-      <ul className="space-y-2">
+      <ul className="space-y-1.5">
         {features.map((f, i) => (
-          <li key={i} className="flex items-center gap-2 text-sm">
-            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${f.included ? "bg-emerald-400" : "bg-muted-foreground/30"}`} />
+          <li key={i} className="flex items-center gap-2 text-xs">
+            <span className={`w-1 h-1 rounded-full flex-shrink-0 ${f.included ? "bg-emerald-400" : "bg-muted-foreground/30"}`} />
             <span className={f.included ? "text-foreground/80" : "text-muted-foreground/50"}>{f.text}</span>
           </li>
         ))}
@@ -246,25 +257,16 @@ function MiniCard({
     teal: "bg-teal-500/20 text-teal-400",
   };
   return (
-    <div className={`rounded-2xl p-5 glass ${featured ? "border-primary/60 ring-1 ring-primary/30" : ""}`}>
-      <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-md mb-3 ${badgeStyles[badgeColor] || badgeStyles.primary}`}>
+    <div className={`rounded-xl p-3.5 glass ${featured ? "border-primary/60 ring-1 ring-primary/30" : ""}`}>
+      <span className={`inline-block text-[10px] font-semibold px-2.5 py-0.5 rounded-md mb-2 ${badgeStyles[badgeColor] || badgeStyles.primary}`}>
         {badge}
       </span>
-      <p className="text-sm font-semibold mb-1">{name}</p>
-      <p className="text-xs text-muted-foreground mb-3">{desc}</p>
-      <p className="text-2xl font-bold">
-        {price} <span className="text-xs font-normal text-muted-foreground">{per}</span>
+      <p className="text-xs font-semibold mb-0.5">{name}</p>
+      <p className="text-[11px] text-muted-foreground mb-2">{desc}</p>
+      <p className="text-xl font-bold">
+        {price} <span className="text-[10px] font-normal text-muted-foreground">{per}</span>
       </p>
-      {note && <p className="text-xs text-emerald-400 font-medium mt-2">{note}</p>}
-    </div>
-  );
-}
-
-function ExtraItem({ name, price }: { name: string; price: string }) {
-  return (
-    <div className="flex items-center justify-between rounded-xl bg-secondary/50 px-5 py-3">
-      <span className="text-sm text-foreground/80">{name}</span>
-      <span className="text-sm font-bold text-foreground whitespace-nowrap ml-4">{price}</span>
+      {note && <p className="text-[10px] text-emerald-400 font-medium mt-1.5">{note}</p>}
     </div>
   );
 }
