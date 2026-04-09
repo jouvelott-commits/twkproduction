@@ -36,6 +36,15 @@ const faqItems = [
       "Rushs non organisés : supplément derush appliqué automatiquement",
     ],
   },
+  {
+    title: "Suppléments",
+    content: [
+      "Version supplémentaire (après V3) — +80€ HT",
+      "Rush excédentaire (hors volume inclus) — +100€ HT / heure",
+      "Livraison express 24h — Tarif x2",
+      "Corporate / institutionnel — Sur devis",
+    ],
+  },
 ];
 
 const FAQ = () => {
