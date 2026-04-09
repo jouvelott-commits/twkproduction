@@ -87,8 +87,10 @@ const Pricing = () => {
                 { text: "Montage cut + rythme", included: true },
                 { text: "Sous-titres", included: true },
                 { text: "Titres / transitions simples", included: true },
+                { text: "Color grading", included: true },
                 { text: "Jusqu'à la V3", included: true },
                 { text: "Miniature non incluse", included: false },
+                { text: "Motion design non inclus", included: false },
               ]}
             />
             <PricingCard
@@ -101,10 +103,10 @@ const Pricing = () => {
               features={[
                 { text: "Montage dynamique", included: true },
                 { text: "Sous-titres", included: true },
-                { text: "Motion design avancé", included: true },
                 { text: "Color grading", included: true },
                 { text: "Jusqu'à la V3", included: true },
                 { text: "Miniature non incluse", included: false },
+                { text: "Motion design non inclus", included: false },
               ]}
             />
             <PricingCard
@@ -114,13 +116,20 @@ const Pricing = () => {
               price="Devis"
               per="/ vidéo"
               features={[
-                { text: "Tout le Pro", included: true },
+                { text: "Montage complet", included: true },
+                { text: "Sous-titres", included: true },
                 { text: "Derush inclus", included: true },
-                { text: "Animations sur mesure", included: true },
+                { text: "Color grading", included: true },
                 { text: "Jusqu'à la V3", included: true },
                 { text: "Miniature non incluse", included: false },
+                { text: "Motion design non inclus", included: false },
               ]}
             />
+          </div>
+          <div className="mt-4 rounded-xl bg-amber-500/10 border border-amber-500/20 px-5 py-3">
+            <p className="text-sm text-amber-300">
+              ⚡ <span className="font-semibold">Avec motion design</span> (animations, effets visuels, graphiques dynamiques) — tarif multiplié par 2 sur n'importe quelle formule YouTube.
+            </p>
           </div>
         </motion.div>
 
