@@ -413,7 +413,6 @@ const categories = [
   { id: "horizontale" as VideoCategory, label: "Horizontale" },
   { id: "verticale" as VideoCategory, label: "Verticale" },
   { id: "podcast" as VideoCategory, label: "Podcast" },
-  { id: "horizontale" as VideoCategory, label: "Entrepreneuriat" },
   { id: "miniature" as VideoCategory, label: "Miniature" },
 ];
 
