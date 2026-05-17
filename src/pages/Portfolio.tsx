@@ -8,7 +8,7 @@ import miniature2 from "@/assets/miniature-2.png";
 import miniature3 from "@/assets/miniature-3.png";
 import miniature4 from "@/assets/miniature-4.png";
 
-type VideoCategory = "horizontale" | "verticale" | "podcast" | "entrepreneuriat" | "miniature";
+type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature";
 
 // Remplace ces IDs par les vrais IDs de tes vidéos YouTube
 const videos = [
@@ -95,6 +95,27 @@ const videos = [
     title: "Vidéo Horizontale 12",
     client: "Client 12",
     views: "890K vues",
+    category: "horizontale" as VideoCategory,
+  },
+  {
+    id: "5v0gz2zkqXQ",
+    title: "Vidéo Horizontale 13",
+    client: "Client 13",
+    views: "",
+    category: "horizontale" as VideoCategory,
+  },
+  {
+    id: "F3b2JYnRKLg",
+    title: "Vidéo Horizontale 14",
+    client: "Client 14",
+    views: "",
+    category: "horizontale" as VideoCategory,
+  },
+  {
+    id: "akVwpU9IJ7I",
+    title: "Vidéo Horizontale 15",
+    client: "Client 15",
+    views: "",
     category: "horizontale" as VideoCategory,
   },
 
@@ -190,84 +211,84 @@ const videos = [
     title: "Entrepreneuriat 1",
     client: "Client 1",
     views: "350K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "mu8wuJRiSd0",
     title: "Entrepreneuriat 2",
     client: "Client 2",
     views: "900K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "zHBXDTOHR_0",
     title: "Entrepreneuriat 3",
     client: "Client 3",
     views: "1.3M vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "tuuAb1A8CkY",
     title: "Entrepreneuriat 4",
     client: "Client 4",
     views: "720K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "vowcSRX2RFQ",
     title: "Entrepreneuriat 5",
     client: "Client 5",
     views: "580K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "fBgGJoue2S4",
     title: "Entrepreneuriat 6",
     client: "Client 6",
     views: "1.1M vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "4pWpgwmD0Tc",
     title: "Entrepreneuriat 7",
     client: "Client 7",
     views: "410K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "aon8N50s36M",
     title: "Entrepreneuriat 8",
     client: "Client 8",
     views: "850K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "koutl_GWWPs",
     title: "Entrepreneuriat 9",
     client: "Client 9",
     views: "1.7M vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "VifMoodQ1nI",
     title: "Entrepreneuriat 10",
     client: "Client 10",
     views: "620K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "GK3mJfrFW4w",
     title: "Entrepreneuriat 11",
     client: "Client 11",
     views: "990K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
   {
     id: "ooCtIyO8RU0",
     title: "Entrepreneuriat 12",
     client: "Client 12",
     views: "530K vues",
-    category: "entrepreneuriat" as VideoCategory,
+    category: "horizontale" as VideoCategory,
   },
 
   // MINIATURE - 4 images
@@ -392,7 +413,6 @@ const categories = [
   { id: "horizontale" as VideoCategory, label: "Horizontale" },
   { id: "verticale" as VideoCategory, label: "Verticale" },
   { id: "podcast" as VideoCategory, label: "Podcast" },
-  { id: "entrepreneuriat" as VideoCategory, label: "Entrepreneuriat" },
   { id: "miniature" as VideoCategory, label: "Miniature" },
 ];
 
