@@ -1,8 +1,18 @@
+## Modifications du Portfolio
 
+### 1. Supprimer la catégorie "Entrepreneuriat"
+- Retirer l'entrée `entrepreneuriat` du tableau `categories`
+- Retirer `"entrepreneuriat"` du type `VideoCategory`
 
-# Remplacer la vidéo Podcast 12
+### 2. Fusionner les vidéos Entrepreneuriat dans Horizontale
+Changer la `category` des 12 vidéos actuellement marquées `entrepreneuriat` vers `horizontale`. La section Horizontale passera ainsi de 12 à 24 vidéos.
 
-## Modification dans `src/pages/Portfolio.tsx`
+### 3. Ajouter 3 nouvelles vidéos dans Horizontale
+- `5v0gz2zkqXQ`
+- `F3b2JYnRKLg`
+- `akVwpU9IJ7I`
 
-Remplacer l'ID YouTube du Podcast 12 : `5Vo4fSnH-VQ` → `PuhwB4q68j4`
+Total final Horizontale : 27 vidéos.
 
+### Fichier modifié
+- `src/pages/Portfolio.tsx`

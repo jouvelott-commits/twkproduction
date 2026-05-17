@@ -8,7 +8,7 @@ import miniature2 from "@/assets/miniature-2.png";
 import miniature3 from "@/assets/miniature-3.png";
 import miniature4 from "@/assets/miniature-4.png";
 
-type VideoCategory = "horizontale" | "verticale" | "podcast" | "entrepreneuriat" | "miniature";
+type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature";
 
 // Remplace ces IDs par les vrais IDs de tes vidéos YouTube
 const videos = [
@@ -95,6 +95,27 @@ const videos = [
     title: "Vidéo Horizontale 12",
     client: "Client 12",
     views: "890K vues",
+    category: "horizontale" as VideoCategory,
+  },
+  {
+    id: "5v0gz2zkqXQ",
+    title: "Vidéo Horizontale 13",
+    client: "Client 13",
+    views: "",
+    category: "horizontale" as VideoCategory,
+  },
+  {
+    id: "F3b2JYnRKLg",
+    title: "Vidéo Horizontale 14",
+    client: "Client 14",
+    views: "",
+    category: "horizontale" as VideoCategory,
+  },
+  {
+    id: "akVwpU9IJ7I",
+    title: "Vidéo Horizontale 15",
+    client: "Client 15",
+    views: "",
     category: "horizontale" as VideoCategory,
   },
 
