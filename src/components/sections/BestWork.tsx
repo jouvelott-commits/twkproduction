@@ -61,7 +61,7 @@ const BestWork = () => {
         </div>
 
         {/* Shorts */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           {shorts.map((short, index) => (
             <motion.div
               key={short.id}
