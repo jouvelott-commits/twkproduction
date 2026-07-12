@@ -13,6 +13,8 @@ const shorts = [
   { id: "hv8IWvIwgOY", title: "Short 1" },
   { id: "pjFUHOsp1Zg", title: "Short 2" },
   { id: "o-vsqzENPQw", title: "Short 3" },
+  { id: "3OUBoaa3uOk", title: "Short 4" },
+  { id: "Ao0IVYIoS78", title: "Short 5" },
 ];
 
 const BestWork = () => {
@@ -61,7 +63,7 @@ const BestWork = () => {
         </div>
 
         {/* Shorts */}
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
           {shorts.map((short, index) => (
             <motion.div
               key={short.id}

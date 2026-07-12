@@ -50,7 +50,7 @@ const Testimonials = () => {
         </motion.div>
 
         {/* Video Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {videoTestimonials.map((video, index) => (
             <motion.div
               key={index}
