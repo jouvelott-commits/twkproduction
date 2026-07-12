@@ -47,9 +47,6 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ce qu'en disent nos <span className="text-gradient">clients</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Des projets qui parlent de leur résultat
-          </p>
         </motion.div>
 
         {/* Video Testimonials */}
