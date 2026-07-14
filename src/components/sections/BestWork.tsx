@@ -54,7 +54,8 @@ const BestWork = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <VideoCard
-                videoId={video.id}
+                thumbnail={youtubeThumbnail(video.id)}
+                href={videoUrl(video.id)}
                 title={video.title}
                 format={video.format}
                 views={video.views}
