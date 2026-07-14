@@ -36,10 +36,10 @@ const BestWork = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Mes <span className="text-gradient">Réalisations</span>
+            Les vidéos qui <span className="text-gradient">boostent les créateurs</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Une sélection de mes meilleurs montages
+            Des montages qui ont fait décoller les chaînes de mes clients.
           </p>
         </motion.div>
 
