@@ -18,6 +18,10 @@ const shorts = [
   { id: "Ao0IVYIoS78", title: "Short 5", format: "FORMAT COURT", views: "760K" },
 ];
 
+const youtubeThumbnail = (id: string) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+const videoUrl = (id: string) => `https://www.youtube.com/watch?v=${id}`;
+const shortUrl = (id: string) => `https://www.youtube.com/shorts/${id}`;
+
 const BestWork = () => {
   return (
     <section className="py-24 relative">
@@ -50,7 +54,8 @@ const BestWork = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <VideoCard
-                videoId={video.id}
+                thumbnail={youtubeThumbnail(video.id)}
+                href={videoUrl(video.id)}
                 title={video.title}
                 format={video.format}
                 views={video.views}
@@ -71,7 +76,8 @@ const BestWork = () => {
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
             >
               <VideoCard
-                videoId={short.id}
+                thumbnail={youtubeThumbnail(short.id)}
+                href={shortUrl(short.id)}
                 title={short.title}
                 format={short.format}
                 views={short.views}
