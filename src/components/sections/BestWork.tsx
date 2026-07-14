@@ -2,19 +2,20 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import VideoCard from "@/components/VideoCard";
 
 const videos = [
-  { id: "5v0gz2zkqXQ", title: "Vidéo 1" },
-  { id: "HdsPOcMBllU", title: "Vidéo 2" },
-  { id: "cH6eY17TRMo", title: "Vidéo 3" },
+  { id: "5v0gz2zkqXQ", title: "Vidéo 1", format: "FORMAT LONG", views: "1,2M" },
+  { id: "HdsPOcMBllU", title: "Vidéo 2", format: "FORMAT LONG", views: "850K" },
+  { id: "cH6eY17TRMo", title: "Vidéo 3", format: "FORMAT LONG", views: "620K" },
 ];
 
 const shorts = [
-  { id: "hv8IWvIwgOY", title: "Short 1" },
-  { id: "pjFUHOsp1Zg", title: "Short 2" },
-  { id: "o-vsqzENPQw", title: "Short 3" },
-  { id: "3OUBoaa3uOk", title: "Short 4" },
-  { id: "Ao0IVYIoS78", title: "Short 5" },
+  { id: "hv8IWvIwgOY", title: "Short 1", format: "FORMAT COURT", views: "2,1M" },
+  { id: "pjFUHOsp1Zg", title: "Short 2", format: "FORMAT COURT", views: "1,5M" },
+  { id: "o-vsqzENPQw", title: "Short 3", format: "FORMAT COURT", views: "980K" },
+  { id: "3OUBoaa3uOk", title: "Short 4", format: "FORMAT COURT", views: "1,8M" },
+  { id: "Ao0IVYIoS78", title: "Short 5", format: "FORMAT COURT", views: "760K" },
 ];
 
 const BestWork = () => {
@@ -31,10 +32,10 @@ const BestWork = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Mon meilleur <span className="text-gradient">travail</span>
+            Mes <span className="text-gradient">Réalisations</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Des projets qui parlent de leur résultat
+            Une sélection de mes meilleurs montages
           </p>
         </motion.div>
 
@@ -47,17 +48,14 @@ const BestWork = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass rounded-2xl overflow-hidden"
             >
-              <div className="aspect-video">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
+              <VideoCard
+                videoId={video.id}
+                title={video.title}
+                format={video.format}
+                views={video.views}
+                aspectRatio="16/9"
+              />
             </motion.div>
           ))}
         </div>
@@ -71,17 +69,14 @@ const BestWork = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              className="glass rounded-2xl overflow-hidden"
             >
-              <div className="relative w-full" style={{ aspectRatio: "9/16" }}>
-                <iframe
-                  src={`https://www.youtube.com/embed/${short.id}`}
-                  title={short.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
+              <VideoCard
+                videoId={short.id}
+                title={short.title}
+                format={short.format}
+                views={short.views}
+                aspectRatio="9/16"
+              />
             </motion.div>
           ))}
         </div>
