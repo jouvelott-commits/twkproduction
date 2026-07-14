@@ -5,8 +5,20 @@ import { Link } from "react-router-dom";
 import VideoCard from "@/components/VideoCard";
 
 const videos = [
-  { id: "5v0gz2zkqXQ", title: "Vidéo 1", format: "FORMAT LONG", views: "1,2M" },
-  { id: "HdsPOcMBllU", title: "Vidéo 2", format: "FORMAT LONG", views: "850K" },
+  {
+    id: "5v0gz2zkqXQ",
+    title: "J'ai enquêté sur l'affaire Sarkozy/Kadhafi. Voilà ce que j'ai découvert",
+    format: "FORMAT LONG",
+    views: "333K",
+    href: "https://youtu.be/5v0gz2zkqXQ?si=KLpZ593jbdpnbX3l",
+  },
+  {
+    id: "H00UfldbbHg",
+    title: "On a reçu le hacker qui rend fou les pirates chinois",
+    format: "FORMAT LONG",
+    views: "2M",
+    href: "https://youtu.be/H00UfldbbHg?si=eaLMfXY1lgIOWEAl",
+  },
   { id: "cH6eY17TRMo", title: "Vidéo 3", format: "FORMAT LONG", views: "620K" },
 ];
 
