@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import VideoCard from "@/components/VideoCard";
 
 const videos = [
   {
@@ -30,10 +29,6 @@ const shorts = [
   { id: "Ao0IVYIoS78", title: "Short 5", format: "FORMAT COURT", views: "760K" },
 ];
 
-const youtubeThumbnail = (id: string) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-const videoUrl = (id: string) => `https://www.youtube.com/watch?v=${id}`;
-const shortUrl = (id: string) => `https://www.youtube.com/shorts/${id}`;
-
 const BestWork = () => {
   return (
     <section className="py-24 relative">
@@ -48,7 +43,7 @@ const BestWork = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Les vidéos qui <span className="text-gradient">boostent les créateurs</span>
+            Mes meilleures <span className="text-gradient">réalisations</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Des montages qui ont fait décoller les chaînes de mes clients.
@@ -64,15 +59,18 @@ const BestWork = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="rounded-2xl overflow-hidden glass"
             >
-              <VideoCard
-                thumbnail={youtubeThumbnail(video.id)}
-                href={video.href || videoUrl(video.id)}
-                title={video.title}
-                format={video.format}
-                views={video.views}
-                aspectRatio="16/9"
-              />
+              <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}`}
+                  title={video.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
             </motion.div>
           ))}
         </div>
@@ -86,15 +84,18 @@ const BestWork = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              className="rounded-2xl overflow-hidden glass"
             >
-              <VideoCard
-                thumbnail={youtubeThumbnail(short.id)}
-                href={shortUrl(short.id)}
-                title={short.title}
-                format={short.format}
-                views={short.views}
-                aspectRatio="9/16"
-              />
+              <div className="relative w-full" style={{ aspectRatio: "9/16" }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${short.id}`}
+                  title={short.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
             </motion.div>
           ))}
         </div>
