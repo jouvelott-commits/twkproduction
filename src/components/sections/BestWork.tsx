@@ -18,6 +18,10 @@ const shorts = [
   { id: "Ao0IVYIoS78", title: "Short 5", format: "FORMAT COURT", views: "760K" },
 ];
 
+const youtubeThumbnail = (id: string) => `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+const videoUrl = (id: string) => `https://www.youtube.com/watch?v=${id}`;
+const shortUrl = (id: string) => `https://www.youtube.com/shorts/${id}`;
+
 const BestWork = () => {
   return (
     <section className="py-24 relative">
