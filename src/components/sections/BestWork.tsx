@@ -67,7 +67,7 @@ const BestWork = () => {
             >
               <VideoCard
                 thumbnail={youtubeThumbnail(video.id)}
-                href={videoUrl(video.id)}
+                href={video.href || videoUrl(video.id)}
                 title={video.title}
                 format={video.format}
                 views={video.views}
