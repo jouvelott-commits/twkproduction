@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Users, Eye } from "lucide-react";
 import maxBellona from "@/assets/max-bellona.png";
 
 const creators = [
@@ -22,27 +21,13 @@ const creators = [
 ];
 
 const CreatorCard = ({ creator }: { creator: typeof creators[0] }) => (
-  <div className="glass rounded-2xl p-6 text-center hover:border-primary/50 transition-colors min-w-[250px] md:min-w-[280px] flex-shrink-0">
+  <div className="glass rounded-2xl p-6 text-center hover:border-primary/50 transition-colors min-w-[200px] md:min-w-[220px] flex-shrink-0">
     <img
       src={creator.avatar}
       alt={creator.name}
       className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
     />
-    <h3 className="font-semibold mb-3">{creator.name}</h3>
-    <div className="space-y-2">
-      {creator.subscribers && (
-        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-          <Users className="w-4 h-4 text-primary" />
-          <span>{creator.subscribers} abonnés</span>
-        </div>
-      )}
-      {creator.views && (
-        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-          <Eye className="w-4 h-4 text-primary" />
-          <span>{creator.views} vues</span>
-        </div>
-      )}
-    </div>
+    <h3 className="font-semibold">{creator.name}</h3>
   </div>
 );
 
