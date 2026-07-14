@@ -1,13 +1,43 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const thumbnailIds = [
+  "5v0gz2zkqXQ",
+  "H00UfldbbHg",
+  "cH6eY17TRMo",
+  "hv8IWvIwgOY",
+  "pjFUHOsp1Zg",
+  "o-vsqzENPQw",
+  "3OUBoaa3uOk",
+  "Ao0IVYIoS78",
+];
+const thumb = (id: string) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      
+
+      {/* Scrolling video thumbnails background */}
+      <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
+        <div className="flex w-max animate-marquee gap-6 h-full items-center">
+          {[...thumbnailIds, ...thumbnailIds].map((id, i) => (
+            <img
+              key={`${id}-${i}`}
+              src={thumb(id)}
+              alt=""
+              aria-hidden="true"
+              className="w-64 md:w-80 rounded-xl object-cover shadow-2xl"
+              style={{ aspectRatio: "16/9" }}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background pointer-events-none" />
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div initial={{
