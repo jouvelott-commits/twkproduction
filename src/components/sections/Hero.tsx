@@ -4,13 +4,20 @@ import { Button } from "@/components/ui/button";
 
 const thumbnailIds = [
   "5v0gz2zkqXQ",
-  "H00UfldbbHg",
+  "F3b2JYnRKLg",
+  "HdsPOcMBllU",
+  "doXOJ9kWSHc",
+  "V1SUytYCkTQ",
+  "7fwF9tp-o9w",
+  "kJ4kz1daC3I",
+  "alClZb67PJo",
+  "22vvFRgZkGs",
+  "4358J1DXHiQ",
+  "qcVGo2DooLQ",
+  "akVwpU9IJ7I",
   "cH6eY17TRMo",
-  "hv8IWvIwgOY",
-  "pjFUHOsp1Zg",
-  "o-vsqzENPQw",
-  "3OUBoaa3uOk",
-  "Ao0IVYIoS78",
+  "-9CPBrJQpJc",
+  "tuuAb1A8CkY",
 ];
 const thumb = (id: string) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 
