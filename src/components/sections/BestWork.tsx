@@ -7,22 +7,22 @@ const videos = [
   {
     id: "5v0gz2zkqXQ",
     title: "J'ai enquêté sur l'affaire Sarkozy/Kadhafi. Voilà ce que j'ai découvert",
-    format: "FORMAT LONG",
+    format: "DOCUMENTAIRE",
     views: "333K",
     href: "https://youtu.be/5v0gz2zkqXQ?si=KLpZ593jbdpnbX3l",
   },
   {
     id: "H00UfldbbHg",
     title: "On a reçu le hacker qui rend fou les pirates chinois",
-    format: "FORMAT LONG",
+    format: "TALK SHOW",
     views: "2M",
     href: "https://youtu.be/H00UfldbbHg?si=eaLMfXY1lgIOWEAl",
   },
   {
     id: "cH6eY17TRMo",
-    title: "Vidéo 3",
-    format: "FORMAT LONG",
-    views: "620K",
+    title: "LA POOKIE #2 : GAGNE OU FAIS TOI POUKAVE ( feat Nourhene )",
+    format: "DIVERTISSEMENT",
+    views: "170K",
     href: "https://youtu.be/cH6eY17TRMo",
   },
 ];
@@ -38,7 +38,7 @@ const shorts = [
 const BestWork = () => {
   return (
     <section className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
