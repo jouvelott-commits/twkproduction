@@ -87,6 +87,19 @@ const BestWork = () => {
                   </div>
                 </div>
               </a>
+              <div className="p-4">
+                <a
+                  href={video.href ?? `https://youtu.be/${video.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold leading-snug line-clamp-2 hover:text-primary transition-colors"
+                >
+                  {video.title}
+                </a>
+                <p className="mt-2 text-xs uppercase text-muted-foreground tracking-[0.12em]">
+                  {video.format} • {video.views} VUES
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -100,28 +113,18 @@ const BestWork = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              className="rounded-2xl overflow-hidden glass group"
+              className="rounded-2xl overflow-hidden glass"
             >
-              <a
-                href={`https://www.youtube.com/shorts/${short.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block relative w-full overflow-hidden"
-                style={{ aspectRatio: "9/16" }}
-                aria-label={short.title}
-              >
-                <img
-                  src={`https://img.youtube.com/vi/${short.id}/hqdefault.jpg`}
-                  alt={short.title}
+              <div className="relative w-full" style={{ aspectRatio: "9/16" }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${short.id}`}
+                  title={short.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
                 />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
-                    <Play className="w-5 h-5 text-primary ml-0.5" fill="currentColor" />
-                  </div>
-                </div>
-              </a>
+              </div>
             </motion.div>
           ))}
         </div>
