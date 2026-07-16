@@ -57,7 +57,7 @@ const Hero = () => {
           duration: 0.6
         }}>
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-muted-foreground mb-8">
-              TWKPRODUCTION
+              JOUVELOT PRODUCTION
               <Play className="w-4 h-4 text-primary" fill="currentColor" />
               Agence de création vidéo
             </span>
@@ -73,8 +73,8 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-            Votre image mérite
-            <br /><span className="text-gradient">plus qu'un simple montage.</span>
+            Montage. Miniature.
+            <br /><span className="text-gradient">Votre image mérite les deux.</span>
           </motion.h1>
 
           <motion.p initial={{
@@ -86,8 +86,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.2
-        }} className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">Des prestations complètes, avec des tarifs adaptés 
-et des délais maîtrisés</motion.p>
+        }} className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">Des prestations complètes,<br />avec des tarifs adaptés et des délais maîtrisés</motion.p>
 
           <motion.div initial={{
           opacity: 0,
