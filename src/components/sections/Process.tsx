@@ -32,11 +32,16 @@ const processes = [
       {
         title: "Brief & échange",
         description:
-          "on cadre le projet, le ton, l'objectif de la vidéo",
+          "on cadre le projet, le titre et l'objectif de la vidéo",
       },
       {
         title: "Miniature",
         description: "conception de la miniature",
+      },
+      {
+        title: "Retours & validation",
+        description:
+          "via Frame.io, on échange facilement jusqu'à ce que le résultat vous corresponde",
       },
       {
         title: "Livraison",
