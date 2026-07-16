@@ -397,7 +397,7 @@ const Portfolio = () => {
       {/* Footer */}
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} TWKPRODUCTION. Tous droits réservés.
+          © {new Date().getFullYear()} JOUVELOT PRODUCTION. Tous droits réservés.
         </div>
       </footer>
     </main>

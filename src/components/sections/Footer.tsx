@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="p-2 rounded-lg bg-gradient-primary">
               <Play className="w-5 h-5 text-white" fill="white" />
             </div>
-            <span className="font-bold text-lg">TWKPRODUCTION</span>
+            <span className="font-bold text-lg">JOUVELOT PRODUCTION</span>
           </div>
           
           <div className="flex gap-6 text-sm text-muted-foreground">
@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
           
           <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} TWKPRODUCTION. Tous droits réservés.
+            © {new Date().getFullYear()} JOUVELOT PRODUCTION. Tous droits réservés.
           </div>
         </div>
       </div>
