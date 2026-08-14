@@ -302,6 +302,44 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState<VideoCategory>("horizontale");
 
   const filteredVideos = videos.filter((video) => video.category === activeCategory);
+  const regularVerticalVideos =
+    activeCategory === "verticale" ? filteredVideos.filter((video) => !video.title.startsWith("UGC/ADS")) : [];
+  const ugcAdsVideos =
+    activeCategory === "verticale" ? filteredVideos.filter((video) => video.title.startsWith("UGC/ADS")) : [];
+
+  const renderVideoCard = (video: (typeof videos)[0], index: number) => {
+    if (video.category === "miniature") {
+      return (
+        <div key={index} className="glass rounded-2xl overflow-hidden group">
+          {video.image && (
+            <img src={video.image} alt={video.title} className="w-full h-full object-cover" />
+          )}
+        </div>
+      );
+    }
+
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        layout
+        className="glass rounded-2xl overflow-hidden group"
+      >
+        <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
+          <iframe
+            src={`https://www.youtube.com/embed/${video.id}`}
+            title={video.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          />
+        </div>
+      </motion.div>
+    );
+  };
 
   return (
     <main className="min-h-screen bg-background">
@@ -372,52 +410,38 @@ const Portfolio = () => {
             </span>
           </motion.h2>
 
-          <div
-            className={`grid gap-6 ${
-              activeCategory === "verticale"
-                ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
-                : activeCategory === "miniature"
-                ? "grid-cols-2 md:grid-cols-4"
-                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-            }`}
-          >
-            {filteredVideos.map((video, index) =>
-              video.category === "miniature" ? (
-                <div
-                  key={index}
-                  className="glass rounded-2xl overflow-hidden group"
-                >
-                  {video.image && (
-                    <img
-                      src={video.image}
-                      alt={video.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-              ) : (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  layout
-                  className="glass rounded-2xl overflow-hidden group"
-                >
-                  <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
-                    <iframe
-                      src={`https://www.youtube.com/embed/${video.id}`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
-                  </div>
-                </motion.div>
-              )
-            )}
-          </div>
+          {activeCategory === "verticale" ? (
+            <>
+              <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                {regularVerticalVideos.map(renderVideoCard)}
+              </div>
+
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-2xl md:text-3xl font-black text-center mt-16 mb-8"
+              >
+                <span className="text-gradient">UGC/ADS</span>
+              </motion.h3>
+
+              <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                {ugcAdsVideos.map(renderVideoCard)}
+              </div>
+            </>
+          ) : (
+            <div
+              className={`grid gap-6 ${
+                activeCategory === "verticale"
+                  ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+                  : activeCategory === "miniature"
+                  ? "grid-cols-2 md:grid-cols-4"
+                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              }`}
+            >
+              {filteredVideos.map(renderVideoCard)}
+            </div>
+          )}
 
           {/* Empty state */}
           {filteredVideos.length === 0 && (
