@@ -1,18 +1,18 @@
-## Modifications du Portfolio
+## Séparer les UGC/ADS dans l'onglet Verticale
 
-### 1. Supprimer la catégorie "Entrepreneuriat"
-- Retirer l'entrée `entrepreneuriat` du tableau `categories`
-- Retirer `"entrepreneuriat"` du type `VideoCategory`
+### Objectif
+Dans l'onglet **Verticale** du portfolio, afficher d'abord les 12 vidéos verticales classiques, puis un titre **UGC/ADS**, puis les 8 shorts UGC/ADS en dessous.
 
-### 2. Fusionner les vidéos Entrepreneuriat dans Horizontale
-Changer la `category` des 12 vidéos actuellement marquées `entrepreneuriat` vers `horizontale`. La section Horizontale passera ainsi de 12 à 24 vidéos.
+### Modifications prévues
 
-### 3. Ajouter 3 nouvelles vidéos dans Horizontale
-- `5v0gz2zkqXQ`
-- `F3b2JYnRKLg`
-- `akVwpU9IJ7I`
-
-Total final Horizontale : 27 vidéos.
+#### 1. `src/pages/Portfolio.tsx` — logique d'affichage
+- Conserver la structure actuelle des données : les 12 vidéos verticales classiques et les 8 shorts UGC/ADS restent tous en `category: "verticale"`.
+- Lorsque `activeCategory === "verticale"`, séparer le rendu en deux blocs :
+  - Bloc 1 : les vidéos dont le titre ne commence pas par `"UGC/ADS"` (les 12 verticales classiques).
+  - Bloc 2 : les vidéos dont le titre commence par `"UGC/ADS"` (les 8 shorts).
+- Entre les deux blocs, insérer un titre de section `<h3>` centré affichant **UGC/ADS**, avec une marge verticale cohérente (par exemple `mt-16 mb-8`).
+- Les deux blocs conservent la même grille verticale (`grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`, `aspect-[9/16]`).
+- Pour les autres catégories (`horizontale`, `podcast`, `miniature`), le rendu reste inchangé (une seule grille).
 
 ### Fichier modifié
 - `src/pages/Portfolio.tsx`
