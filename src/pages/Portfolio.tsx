@@ -375,7 +375,7 @@ const Portfolio = () => {
 
           <div
             className={`grid gap-6 ${
-              activeCategory === "verticale"
+              activeCategory === "verticale" || activeCategory === "ugc_ads"
                 ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
                 : activeCategory === "miniature"
                 ? "grid-cols-2 md:grid-cols-4"
