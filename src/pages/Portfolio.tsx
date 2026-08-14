@@ -8,7 +8,7 @@ import miniature2 from "@/assets/miniature-2.png";
 import miniature3 from "@/assets/miniature-3.png";
 import miniature4 from "@/assets/miniature-4.png";
 
-type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature";
+type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature" | "ugc_ads";
 
 // Remplace ces IDs par les vrais IDs de tes vidéos YouTube
 const videos = [
@@ -231,11 +231,70 @@ const videos = [
     views: "3.5M vues",
     category: "verticale" as VideoCategory,
   },
+
+  // UGC/ADS - 8 shorts
+  {
+    id: "c9IoB2M9wyU",
+    title: "UGC/ADS 1",
+    client: "",
+    views: "",
+    category: "ugc_ads" as VideoCategory,
+  },
+  {
+    id: "tKIAAhwJrRA",
+    title: "UGC/ADS 2",
+    client: "",
+    views: "",
+    category: "ugc_ads" as VideoCategory,
+  },
+  {
+    id: "4gKgetroIO4",
+    title: "UGC/ADS 3",
+    client: "",
+    views: "",
+    category: "ugc_ads" as VideoCategory,
+  },
+  {
+    id: "Wy3207Ydrxk",
+    title: "UGC/ADS 4",
+    client: "",
+    views: "",
+    category: "ugc_ads" as VideoCategory,
+  },
+  {
+    id: "NfUrMTipWCs",
+    title: "UGC/ADS 5",
+    client: "",
+    views: "",
+    category: "ugc_ads" as VideoCategory,
+  },
+  {
+    id: "oinZc2SwR3M",
+    title: "UGC/ADS 6",
+    client: "",
+    views: "",
+    category: "ugc_ads" as VideoCategory,
+  },
+  {
+    id: "Bm2dpFIeJmI",
+    title: "UGC/ADS 7",
+    client: "",
+    views: "",
+    category: "ugc_ads" as VideoCategory,
+  },
+  {
+    id: "AWov4GolU98",
+    title: "UGC/ADS 8",
+    client: "",
+    views: "",
+    category: "ugc_ads" as VideoCategory,
+  },
 ];
 
 const categories = [
   { id: "horizontale" as VideoCategory, label: "Horizontale" },
   { id: "verticale" as VideoCategory, label: "Verticale" },
+  { id: "ugc_ads" as VideoCategory, label: "UGC/ADS" },
   { id: "podcast" as VideoCategory, label: "Podcast" },
   { id: "miniature" as VideoCategory, label: "Miniature" },
 ];
@@ -310,13 +369,17 @@ const Portfolio = () => {
           >
           {activeCategory === "miniature" ? "" : "VIDÉOS "}
             <span className="text-gradient">
-              {activeCategory === "miniature" ? "MINIATURES" : activeCategory.toUpperCase() + "S"}
+              {activeCategory === "miniature"
+                ? "MINIATURES"
+                : activeCategory === "ugc_ads"
+                ? "UGC/ADS"
+                : activeCategory.toUpperCase() + "S"}
             </span>
           </motion.h2>
 
           <div
             className={`grid gap-6 ${
-              activeCategory === "verticale"
+              activeCategory === "verticale" || activeCategory === "ugc_ads"
                 ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
                 : activeCategory === "miniature"
                 ? "grid-cols-2 md:grid-cols-4"
@@ -347,7 +410,7 @@ const Portfolio = () => {
                   layout
                   className="glass rounded-2xl overflow-hidden group"
                 >
-                  <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
+                  <div className={video.category === "verticale" || video.category === "ugc_ads" ? "aspect-[9/16]" : "aspect-video"}>
                     <iframe
                       src={`https://www.youtube.com/embed/${video.id}`}
                       title={video.title}
