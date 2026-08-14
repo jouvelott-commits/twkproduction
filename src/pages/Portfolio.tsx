@@ -368,17 +368,13 @@ const Portfolio = () => {
           >
           {activeCategory === "miniature" ? "" : "VIDÉOS "}
             <span className="text-gradient">
-              {activeCategory === "miniature"
-                ? "MINIATURES"
-                : activeCategory === "ugc_ads"
-                ? "UGC/ADS"
-                : activeCategory.toUpperCase() + "S"}
+              {activeCategory === "miniature" ? "MINIATURES" : activeCategory.toUpperCase() + "S"}
             </span>
           </motion.h2>
 
           <div
             className={`grid gap-6 ${
-              activeCategory === "verticale" || activeCategory === "ugc_ads"
+              activeCategory === "verticale"
                 ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
                 : activeCategory === "miniature"
                 ? "grid-cols-2 md:grid-cols-4"
@@ -409,7 +405,7 @@ const Portfolio = () => {
                   layout
                   className="glass rounded-2xl overflow-hidden group"
                 >
-                  <div className={video.category === "verticale" || video.category === "ugc_ads" ? "aspect-[9/16]" : "aspect-video"}>
+                  <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
                     <iframe
                       src={`https://www.youtube.com/embed/${video.id}`}
                       title={video.title}
