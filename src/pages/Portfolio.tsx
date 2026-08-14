@@ -369,7 +369,11 @@ const Portfolio = () => {
           >
           {activeCategory === "miniature" ? "" : "VIDÉOS "}
             <span className="text-gradient">
-              {activeCategory === "miniature" ? "MINIATURES" : activeCategory.toUpperCase() + "S"}
+              {activeCategory === "miniature"
+                ? "MINIATURES"
+                : activeCategory === "ugc_ads"
+                ? "UGC/ADS"
+                : activeCategory.toUpperCase() + "S"}
             </span>
           </motion.h2>
 
