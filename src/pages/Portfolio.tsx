@@ -296,10 +296,7 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState<VideoCategory>("horizontale");
 
   const filteredVideos = videos.filter((video) => video.category === activeCategory);
-  const regularVerticalVideos =
-    activeCategory === "verticale" ? filteredVideos.filter((video) => !video.title?.startsWith("UGC/ADS")) : [];
-  const ugcAdsVideos =
-    activeCategory === "verticale" ? filteredVideos.filter((video) => video.title?.startsWith("UGC/ADS")) : [];
+  const isVerticalFormat = activeCategory === "verticale" || activeCategory === "ugc_ads";
 
   const renderVideoCard = (video: (typeof videos)[0], index: number) => {
     if (video.category === "miniature") {
@@ -322,7 +319,11 @@ const Portfolio = () => {
         layout
         className="glass rounded-2xl overflow-hidden group"
       >
-        <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
+        <div
+          className={
+            video.category === "verticale" || video.category === "ugc_ads" ? "aspect-[9/16]" : "aspect-video"
+          }
+        >
           <iframe
             src={`https://www.youtube.com/embed/${video.id}`}
             title={video.title}
