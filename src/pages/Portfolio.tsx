@@ -432,9 +432,7 @@ const Portfolio = () => {
           ) : (
             <div
               className={`grid gap-6 ${
-                activeCategory === "verticale"
-                  ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
-                  : activeCategory === "miniature"
+                activeCategory === "miniature"
                   ? "grid-cols-2 md:grid-cols-4"
                   : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
               }`}
