@@ -7,6 +7,12 @@ import miniature1 from "@/assets/miniature-1.png";
 import miniature2 from "@/assets/miniature-2.png";
 import miniature3 from "@/assets/miniature-3.png";
 import miniature4 from "@/assets/miniature-4.png";
+import miniature5Asset from "@/assets/tableau_d_enquete_simon.png.asset.json";
+import miniature6Asset from "@/assets/main_rouge_V2.png.asset.json";
+import miniature7Asset from "@/assets/MACRON_Cameroun.png.asset.json";
+import miniature8Asset from "@/assets/JoshuaV1.png.asset.json";
+import miniature9Asset from "@/assets/Podcast_joshua_sans_objet_de_Youtubeur.jpg.asset.json";
+import miniature10Asset from "@/assets/Image_maxresdefault_1280x720.jpg.asset.json";
 
 type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature" | "ugc_ads";
 
@@ -147,6 +153,54 @@ const videos = [
     views: "",
     category: "miniature" as VideoCategory,
     image: miniature4,
+  },
+  {
+    id: "miniature-5",
+    title: "Miniature 5",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature5Asset.url,
+  },
+  {
+    id: "miniature-6",
+    title: "Miniature 6",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature6Asset.url,
+  },
+  {
+    id: "miniature-7",
+    title: "Miniature 7",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature7Asset.url,
+  },
+  {
+    id: "miniature-8",
+    title: "Miniature 8",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature8Asset.url,
+  },
+  {
+    id: "miniature-9",
+    title: "Miniature 9",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature9Asset.url,
+  },
+  {
+    id: "miniature-10",
+    title: "Miniature 10",
+    client: "",
+    views: "",
+    category: "miniature" as VideoCategory,
+    image: miniature10Asset.url,
   },
 
   // VERTICALE - 12 vidéos (4 rangées)
