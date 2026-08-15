@@ -8,7 +8,7 @@ import miniature2 from "@/assets/miniature-2.png";
 import miniature3 from "@/assets/miniature-3.png";
 import miniature4 from "@/assets/miniature-4.png";
 
-type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature";
+type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature" | "ugc_ads";
 
 // Remplace ces IDs par les vrais IDs de tes vidéos YouTube
 const videos = [
@@ -185,7 +185,7 @@ const videos = [
     category: "verticale" as VideoCategory,
   },
   {
-    id: "PyZZc9x7xtc",
+    id: "ZRkdw60t7WA",
     title: "Vidéo Verticale 6",
     client: "Client 6",
     views: "1.1M vues",
@@ -209,13 +209,6 @@ const videos = [
     id: "Jv7jjzJxaIw",
     client: "Client 9",
     views: "1.9M vues",
-    category: "verticale" as VideoCategory,
-  },
-  {
-    id: "aD29EXB8tGM",
-    title: "Vidéo Verticale 10",
-    client: "Client 10",
-    views: "2.3M vues",
     category: "verticale" as VideoCategory,
   },
   {
