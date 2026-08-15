@@ -399,42 +399,27 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-black text-center mb-12"
           >
-          {activeCategory === "miniature" ? "" : "VIDÉOS "}
+          {activeCategory === "miniature" || activeCategory === "ugc_ads" ? "" : "VIDÉOS "}
             <span className="text-gradient">
-              {activeCategory === "miniature" ? "MINIATURES" : activeCategory.toUpperCase() + "S"}
+              {activeCategory === "miniature"
+                ? "MINIATURES"
+                : activeCategory === "ugc_ads"
+                  ? "UGC/ADS"
+                  : activeCategory.toUpperCase() + "S"}
             </span>
           </motion.h2>
 
-          {activeCategory === "verticale" ? (
-            <>
-              <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {regularVerticalVideos.map(renderVideoCard)}
-              </div>
-
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-2xl md:text-3xl font-black text-center mt-16 mb-8"
-              >
-                <span className="text-gradient">UGC/ADS</span>
-              </motion.h3>
-
-              <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {ugcAdsVideos.map(renderVideoCard)}
-              </div>
-            </>
-          ) : (
-            <div
-              className={`grid gap-6 ${
-                activeCategory === "miniature"
+          <div
+            className={`grid gap-6 ${
+              isVerticalFormat
+                ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+                : activeCategory === "miniature"
                   ? "grid-cols-2 md:grid-cols-4"
                   : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-              }`}
-            >
-              {filteredVideos.map(renderVideoCard)}
-            </div>
-          )}
+            }`}
+          >
+            {filteredVideos.map(renderVideoCard)}
+          </div>
 
           {/* Empty state */}
           {filteredVideos.length === 0 && (
