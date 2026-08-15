@@ -8,7 +8,7 @@ import miniature2 from "@/assets/miniature-2.png";
 import miniature3 from "@/assets/miniature-3.png";
 import miniature4 from "@/assets/miniature-4.png";
 
-type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature";
+type VideoCategory = "horizontale" | "verticale" | "podcast" | "miniature" | "ugc_ads";
 
 // Remplace ces IDs par les vrais IDs de tes vidéos YouTube
 const videos = [
@@ -185,7 +185,7 @@ const videos = [
     category: "verticale" as VideoCategory,
   },
   {
-    id: "PyZZc9x7xtc",
+    id: "ZRkdw60t7WA",
     title: "Vidéo Verticale 6",
     client: "Client 6",
     views: "1.1M vues",
@@ -212,13 +212,6 @@ const videos = [
     category: "verticale" as VideoCategory,
   },
   {
-    id: "aD29EXB8tGM",
-    title: "Vidéo Verticale 10",
-    client: "Client 10",
-    views: "2.3M vues",
-    category: "verticale" as VideoCategory,
-  },
-  {
     id: "AA1Gzc_s0w0",
     title: "Vidéo Verticale 11",
     client: "Client 11",
@@ -238,56 +231,56 @@ const videos = [
     title: "UGC/ADS 1",
     client: "",
     views: "",
-    category: "verticale" as VideoCategory,
+    category: "ugc_ads" as VideoCategory,
   },
   {
     id: "tKIAAhwJrRA",
     title: "UGC/ADS 2",
     client: "",
     views: "",
-    category: "verticale" as VideoCategory,
+    category: "ugc_ads" as VideoCategory,
   },
   {
     id: "4gKgetroIO4",
     title: "UGC/ADS 3",
     client: "",
     views: "",
-    category: "verticale" as VideoCategory,
+    category: "ugc_ads" as VideoCategory,
   },
   {
     id: "Wy3207Ydrxk",
     title: "UGC/ADS 4",
     client: "",
     views: "",
-    category: "verticale" as VideoCategory,
+    category: "ugc_ads" as VideoCategory,
   },
   {
     id: "NfUrMTipWCs",
     title: "UGC/ADS 5",
     client: "",
     views: "",
-    category: "verticale" as VideoCategory,
+    category: "ugc_ads" as VideoCategory,
   },
   {
     id: "oinZc2SwR3M",
     title: "UGC/ADS 6",
     client: "",
     views: "",
-    category: "verticale" as VideoCategory,
+    category: "ugc_ads" as VideoCategory,
   },
   {
     id: "Bm2dpFIeJmI",
     title: "UGC/ADS 7",
     client: "",
     views: "",
-    category: "verticale" as VideoCategory,
+    category: "ugc_ads" as VideoCategory,
   },
   {
     id: "AWov4GolU98",
     title: "UGC/ADS 8",
     client: "",
     views: "",
-    category: "verticale" as VideoCategory,
+    category: "ugc_ads" as VideoCategory,
   },
 ];
 
@@ -295,6 +288,7 @@ const categories = [
   { id: "horizontale" as VideoCategory, label: "Horizontale" },
   { id: "verticale" as VideoCategory, label: "Verticale" },
   { id: "podcast" as VideoCategory, label: "Podcast" },
+  { id: "ugc_ads" as VideoCategory, label: "UGC/ADS" },
   { id: "miniature" as VideoCategory, label: "Miniature" },
 ];
 
@@ -302,10 +296,7 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState<VideoCategory>("horizontale");
 
   const filteredVideos = videos.filter((video) => video.category === activeCategory);
-  const regularVerticalVideos =
-    activeCategory === "verticale" ? filteredVideos.filter((video) => !video.title?.startsWith("UGC/ADS")) : [];
-  const ugcAdsVideos =
-    activeCategory === "verticale" ? filteredVideos.filter((video) => video.title?.startsWith("UGC/ADS")) : [];
+  const isVerticalFormat = activeCategory === "verticale" || activeCategory === "ugc_ads";
 
   const renderVideoCard = (video: (typeof videos)[0], index: number) => {
     if (video.category === "miniature") {
@@ -328,7 +319,11 @@ const Portfolio = () => {
         layout
         className="glass rounded-2xl overflow-hidden group"
       >
-        <div className={video.category === "verticale" ? "aspect-[9/16]" : "aspect-video"}>
+        <div
+          className={
+            video.category === "verticale" || video.category === "ugc_ads" ? "aspect-[9/16]" : "aspect-video"
+          }
+        >
           <iframe
             src={`https://www.youtube.com/embed/${video.id}`}
             title={video.title}
@@ -404,42 +399,27 @@ const Portfolio = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-black text-center mb-12"
           >
-          {activeCategory === "miniature" ? "" : "VIDÉOS "}
+          {activeCategory === "miniature" || activeCategory === "ugc_ads" ? "" : "VIDÉOS "}
             <span className="text-gradient">
-              {activeCategory === "miniature" ? "MINIATURES" : activeCategory.toUpperCase() + "S"}
+              {activeCategory === "miniature"
+                ? "MINIATURES"
+                : activeCategory === "ugc_ads"
+                  ? "UGC/ADS"
+                  : activeCategory.toUpperCase() + "S"}
             </span>
           </motion.h2>
 
-          {activeCategory === "verticale" ? (
-            <>
-              <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {regularVerticalVideos.map(renderVideoCard)}
-              </div>
-
-              <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-2xl md:text-3xl font-black text-center mt-16 mb-8"
-              >
-                <span className="text-gradient">UGC/ADS</span>
-              </motion.h3>
-
-              <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {ugcAdsVideos.map(renderVideoCard)}
-              </div>
-            </>
-          ) : (
-            <div
-              className={`grid gap-6 ${
-                activeCategory === "miniature"
+          <div
+            className={`grid gap-6 ${
+              isVerticalFormat
+                ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+                : activeCategory === "miniature"
                   ? "grid-cols-2 md:grid-cols-4"
                   : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-              }`}
-            >
-              {filteredVideos.map(renderVideoCard)}
-            </div>
-          )}
+            }`}
+          >
+            {filteredVideos.map(renderVideoCard)}
+          </div>
 
           {/* Empty state */}
           {filteredVideos.length === 0 && (
