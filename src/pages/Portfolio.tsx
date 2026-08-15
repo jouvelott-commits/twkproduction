@@ -303,9 +303,9 @@ const Portfolio = () => {
 
   const filteredVideos = videos.filter((video) => video.category === activeCategory);
   const regularVerticalVideos =
-    activeCategory === "verticale" ? filteredVideos.filter((video) => !video.title.startsWith("UGC/ADS")) : [];
+    activeCategory === "verticale" ? filteredVideos.filter((video) => !video.title?.startsWith("UGC/ADS")) : [];
   const ugcAdsVideos =
-    activeCategory === "verticale" ? filteredVideos.filter((video) => video.title.startsWith("UGC/ADS")) : [];
+    activeCategory === "verticale" ? filteredVideos.filter((video) => video.title?.startsWith("UGC/ADS")) : [];
 
   const renderVideoCard = (video: (typeof videos)[0], index: number) => {
     if (video.category === "miniature") {
