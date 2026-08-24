@@ -117,39 +117,7 @@ const videos = [
     category: "podcast" as VideoCategory,
   },
 
-  // MINIATURE - 4 images
-  {
-    id: "miniature-1",
-    title: "Miniature 1",
-    client: "",
-    views: "",
-    category: "miniature" as VideoCategory,
-    image: miniature1,
-  },
-  {
-    id: "miniature-2",
-    title: "Miniature 2",
-    client: "",
-    views: "",
-    category: "miniature" as VideoCategory,
-    image: miniature2,
-  },
-  {
-    id: "miniature-3",
-    title: "Miniature 3",
-    client: "",
-    views: "",
-    category: "miniature" as VideoCategory,
-    image: miniature3,
-  },
-  {
-    id: "miniature-4",
-    title: "Miniature 4",
-    client: "",
-    views: "",
-    category: "miniature" as VideoCategory,
-    image: miniature4,
-  },
+  // MINIATURE - images
   {
     id: "miniature-5",
     title: "Miniature 5",
