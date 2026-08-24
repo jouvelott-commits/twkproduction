@@ -8,6 +8,14 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    proxy: process.env.LOVABLE_PREVIEW_HOST
+      ? {
+          "/__l5e": {
+            target: `https://${process.env.LOVABLE_PREVIEW_HOST}`,
+            changeOrigin: true,
+          },
+        }
+      : undefined,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
