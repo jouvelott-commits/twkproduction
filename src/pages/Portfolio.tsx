@@ -355,9 +355,9 @@ const Portfolio = () => {
   const renderVideoCard = (video: (typeof videos)[0], index: number) => {
     if (video.category === "miniature") {
       return (
-        <div key={index} className="glass rounded-2xl overflow-hidden group">
+        <div key={index} className="glass rounded-2xl overflow-hidden group aspect-video">
           {video.image && (
-            <img src={video.image} alt={video.title} className="w-full h-full object-cover" />
+            <img src={video.image} alt={video.title} loading="lazy" className="w-full h-full object-cover" />
           )}
         </div>
       );
