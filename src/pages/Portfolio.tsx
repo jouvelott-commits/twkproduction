@@ -3,10 +3,6 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import miniature1 from "@/assets/miniature-1.png";
-import miniature2 from "@/assets/miniature-2.png";
-import miniature3 from "@/assets/miniature-3.png";
-import miniature4 from "@/assets/miniature-4.png";
 import miniature5Asset from "@/assets/tableau_d_enquete_simon.png.asset.json";
 import miniature6Asset from "@/assets/main_rouge_V2.png.asset.json";
 import miniature7Asset from "@/assets/MACRON_Cameroun.png.asset.json";
@@ -121,39 +117,7 @@ const videos = [
     category: "podcast" as VideoCategory,
   },
 
-  // MINIATURE - 4 images
-  {
-    id: "miniature-1",
-    title: "Miniature 1",
-    client: "",
-    views: "",
-    category: "miniature" as VideoCategory,
-    image: miniature1,
-  },
-  {
-    id: "miniature-2",
-    title: "Miniature 2",
-    client: "",
-    views: "",
-    category: "miniature" as VideoCategory,
-    image: miniature2,
-  },
-  {
-    id: "miniature-3",
-    title: "Miniature 3",
-    client: "",
-    views: "",
-    category: "miniature" as VideoCategory,
-    image: miniature3,
-  },
-  {
-    id: "miniature-4",
-    title: "Miniature 4",
-    client: "",
-    views: "",
-    category: "miniature" as VideoCategory,
-    image: miniature4,
-  },
+  // MINIATURE - images
   {
     id: "miniature-5",
     title: "Miniature 5",
